@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layout');
-});
+    return view('home');
+})->name('home');
+
+Route::resource('questions','QuestionController')->only('index', 'create', 'store');
+
+Route::get('question/answers/index', 'AnswerController@index')->name('answers.index');
+Route::post('question/{question}/answer', 'AnswerController@create')->name('answers.store');

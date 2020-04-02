@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Answer extends Model
 {
     /**
-     * Get the question associated with the answer.
+     * Get the question that owns the answer.
      */
     public function question()
     {
-        return $this->hasOne('App\Models\Question');
+        return $this->belongsTo('App\Models\Question');
     }
 }
