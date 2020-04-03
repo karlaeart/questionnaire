@@ -22,13 +22,27 @@
                     <td>
                         @csrf
                         <div class="form-group">
-                            <textarea class="form-control answer" name="text" rows="3" data-empty="{{ ($question->answer()->exists()) ? "1" : "0" }}">{{ $question->answer['text'] }}</textarea>
+                            <textarea class="form-control answer" name="text" rows="3">{{ $question->answer['text'] }}</textarea>
                         </div>
                     </td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group" aria-label="actionsGroup">
-                            <button type="submit" name="store" class="btn btn-secondary button-store" @if($question->answer()->exists()) hidden @endif><i class="fas fa-check"></i></button>
-                            <button type="submit" name="update" class="btn btn-secondary button-update" @if(!$question->answer()->exists()) hidden @endif><i class="fas fa-pen"></i></button>
+                            <button type="submit"
+                                    name="store"
+                                    class="btn btn-secondary button-store"
+                                    @if($question->answer()->exists()) hidden @endif
+                                    data-toggle="tooltip" data-placement="top" title="Store answer"
+                            >
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button type="submit"
+                                    name="update"
+                                    class="btn btn-secondary button-update"
+                                    @if(!$question->answer()->exists()) hidden @endif
+                                    data-toggle="tooltip" data-placement="top" title="Update answer"
+                            >
+                                <i class="fas fa-pen"></i>
+                            </button>
                         </div>
                     </td>
                 </tr>
