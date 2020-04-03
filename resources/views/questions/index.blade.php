@@ -13,7 +13,7 @@
         <tbody>
         @foreach($questions as $question)
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{ $question->id }}</th>
                 <td>{{ $question->text }}</td>
             </tr>
         @endforeach

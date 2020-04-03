@@ -23,7 +23,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{{route('answers.index')}}"><i class="fas fa-comment-dots"></i> Answers </a>
+                    <a href="{{route('answers.create')}}"><i class="fas fa-comment-dots"></i> Answers </a>
                 </li>
             </ul>
 

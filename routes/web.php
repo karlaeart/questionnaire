@@ -19,5 +19,5 @@ Route::get('/', function () {
 
 Route::resource('questions','QuestionController')->only('index', 'create', 'store');
 
-Route::get('question/answers/index', 'AnswerController@index')->name('answers.index');
-Route::post('question/{question}/answer', 'AnswerController@create')->name('answers.store');
+Route::get('question/answers/create', 'AnswerController@create')->name('answers.create');
+Route::post('question/{question}/answer', 'AnswerController@storeOrUpdate')->name('answers.store.update');

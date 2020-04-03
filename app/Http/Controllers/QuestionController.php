@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Question;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -27,6 +28,10 @@ class QuestionController extends Controller
         return view('questions.create');
     }
 
+    /**
+     * @param Request $request
+     * @return RedirectResponse
+     */
     public function store(Request $request)
     {
         $question = Question::create($request->only('text'));
