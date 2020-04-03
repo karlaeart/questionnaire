@@ -31,7 +31,7 @@
                                     name="store"
                                     class="btn btn-secondary button-store"
                                     @if($question->answer()->exists()) hidden @endif
-                                    data-toggle="tooltip" data-placement="top" title="Store answer"
+                                    data-toggle="tooltip" data-placement="top" title="Save answer"
                             >
                                 <i class="fas fa-check"></i>
                             </button>
