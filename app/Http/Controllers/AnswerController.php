@@ -29,11 +29,11 @@ class AnswerController extends Controller
     public function storeOrUpdate(Request $request, Question $question)
     {
         // determine whether the store or the update button was pressed
-        if($request->has('store')) {
+        if ($request->has('store')) {
             $answer = $question->answer()->create([
                 'text' => $request->get('text'),
             ]);
-        } else if($request->has('update')){
+        } elseif ($request->has('update')) {
             $answer = $question->answer;
 
             $answer->text = $request->input('text');
